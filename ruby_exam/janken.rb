@@ -7,7 +7,7 @@ class Player
         puts "0:グー, 1:チョキ, 2:パー"
         input_hand = gets
         if Integer(input_hand,exception: false) == nil
-            puts "0〜2の数字を入力してください。"
+            puts "0〜2の数字を入力してください"
         elsif correct_index.include?(input_hand.to_i)
             return input_hand.to_i
         else   
@@ -26,18 +26,19 @@ class Player
 class Janken
 def pon(player_hand, enemy_hand)
     # 変数「janken」に["グー", "チョキ", "パー"]を代入します。
+    puts ("player_hand is #{player_hand} and enemy hand is #{enemy_hand}  ")
     janken = ["グー", "チョキ", "パー"]
     #「相手の手は#{相手の手}です。」と出力させます。
     puts "相手の手は#{janken[enemy_hand]}です。"
     # Playerクラスの戻り値とEnemyクラスの戻り値からじゃんけんするロジックを作成します。
     if player_hand == enemy_hand
-        puts "あいこ"
+        puts "あいこ."
         return true
     elsif (player_hand == 0 && enemy_hand == 1) || (player_hand == 1 && enemy_hand == 2) || (player_hand == 2 && enemy_hand == 0)
-        puts "あなたが勝ちます"
+        puts "あなたが勝ちます."
         return false
     else
-        puts "あなたは負けます"
+        puts "あなたは負けます."
         return false
     end
 end
